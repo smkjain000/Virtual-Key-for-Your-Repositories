@@ -36,6 +36,7 @@ public class Welcome {
 		while(flag) {
 			menu1();
 			System.out.println("Enter your choice");
+			try {
 			
 			int choices=sc.nextInt();
 			
@@ -53,15 +54,12 @@ public class Welcome {
 			switch(n) {
 			case 1:
 				f.AddFile();
-				System.out.println("File added Successfully");
 				continue;
 			case 2:
 				f.DeleteFile();
-				System.out.println("File deleted Successfully");
 				continue;
 			case 3:
 				f.SearchFile();
-				System.out.println("File found Successfully ");
 				continue;
 			case 4:
 				continue;
@@ -82,7 +80,12 @@ public class Welcome {
 				System.out.println("Invalid choice.Please Enter a valid choice");
 				break;
 			}
+		}catch(Exception e) {
+			System.out.println("Enter valid choice");
+			
 		}
+		}
+		sc.close();
 
 	}
 
